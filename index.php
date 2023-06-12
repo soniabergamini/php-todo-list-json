@@ -19,12 +19,22 @@
 </head>
 
 <body>
-    
+
     <!-- Vue JS App -->
     <div id="app" class="bg-black">
+
         <!-- Project Main Container -->
         <main class="h-screen text-white">
-            <span>{{ myString }}</span>
+            <small class="my-3">{{ myString }}</small>
+
+            <!-- To Do List from API -->
+            <h3 class="font-bold text-2xl">📍 TO DO LIST:</h3>
+            <ul v-if="todoList.length>0" class="list-disc list-inside my-2">
+                <li v-for="item in todoList">
+                    {{ item }}
+                </li>
+            </ul>
+            
         </main>
     </div>
 

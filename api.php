@@ -8,7 +8,10 @@ $todoList = [
     "Call the doctor",
     "Learn PHP", 
     "Take a walk with Dea 🦮", 
-    "Sleep all day all night"
+    "Sleep all day all night",
+    "Go to the vet",
+    "Make lasagna with grandma",
+    "Organize Betta's party"
 ];
 
 // Transfor php array into json object
