@@ -10,8 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- Script Tailwind -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="./cdn.tailwindcss.3.3.2"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <!-- Script Vue Js -->
     <script src="./vue.3.2.47.js"></script>
@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    
     <!-- Vue JS App -->
     <div id="app" class="bg-black">
         <!-- Project Main Container -->
