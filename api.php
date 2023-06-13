@@ -29,7 +29,16 @@
 // Get Json Data and Decode Data
 header('Content-Type: application/json');
 $todoList = file_get_contents("./data.json");
+
+// Data Processing
 $todoListData = json_decode($todoList, true);
+if (isset($_POST['newTask'])) {
+    // Add New Task to PHP Array and JSON Array
+    $todoListData[] = $_POST['newTask'];
+    file_put_contents("./data.json", json_encode($todoListData));
+}
+$todoList = json_encode($todoListData);
+
 echo $todoList;
 
 ?>

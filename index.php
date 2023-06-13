@@ -14,27 +14,34 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <!-- Script Vue Js -->
-    <script src="./vue.3.2.47.js"></script>
-    <!-- <script src="https://unpkg.com/vue@3"></script>  // this CDN script doesn't work on github preview, due to CORS proxy -->
+    <!-- <script src="./vue.3.2.47.js"></script> -->
+    <script src="https://unpkg.com/vue@3"></script>
 </head>
 
 <body>
 
     <!-- Vue JS App -->
-    <div id="app" class="bg-black h-screen">
+    <div id="app" class="bg-black min-h-screen">
 
         <header class="text-white text-center py-5">
             <h3 class="font-bold text-2xl">📍 TO DO LIST:</h3>
         </header>
 
         <!-- Project Main Container -->
-        <main class="text-white flex flex-col items-center max-w-lg border mx-auto">
+        <main class="text-white max-w-lg border mx-auto py-5">
+
             <!-- To Do List from API -->
-            <ul v-if="todoList.length>0" class="list-disc list-inside my-2">
-                <li v-for="item in todoList">
+            <ul v-if="todoList.length>0" class="list-disc list-inset px-4 my-2 border">
+                <li v-for="item in todoList" class="my-2">
                     <span>{{ item }}</span>
                 </li>
             </ul>
+
+            <!-- Add New Task Button -->
+            <div>
+                <input @keyup.enter="addTask" v-model="newTask" type="text" placeholder="Add new task here..." class="px-2 py-1 text-black mx-3 rounded w-[65%]">
+                <button @click="addTask" class="bg-emerald-500 px-4 py-1 rounded hover:bg-teal-300 hover:text-zinc-700">ADD</button>
+            </div>
 
         </main>
     </div>
