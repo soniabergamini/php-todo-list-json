@@ -21,20 +21,21 @@
 <body>
 
     <!-- Vue JS App -->
-    <div id="app" class="bg-black">
+    <div id="app" class="bg-black h-screen">
+
+        <header class="text-white text-center py-5">
+            <h3 class="font-bold text-2xl">📍 TO DO LIST:</h3>
+        </header>
 
         <!-- Project Main Container -->
-        <main class="h-screen text-white">
-            <small class="my-3">{{ myString }}</small>
-
+        <main class="text-white flex flex-col items-center max-w-lg border mx-auto">
             <!-- To Do List from API -->
-            <h3 class="font-bold text-2xl">📍 TO DO LIST:</h3>
             <ul v-if="todoList.length>0" class="list-disc list-inside my-2">
                 <li v-for="item in todoList">
-                    {{ item }}
+                    <span>{{ item }}</span>
                 </li>
             </ul>
-            
+
         </main>
     </div>
 
