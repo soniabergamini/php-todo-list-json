@@ -35,7 +35,10 @@ $todoListData = json_decode($todoList, true);
 if (isset($_POST['newTask'])) {
 
     // Add New Task to PHP Array and JSON Array
-    $todoListData[] = $_POST['newTask'];
+    $todoListData[] = [
+        "text" => $_POST['newTask'],
+        "done" => false,
+    ];
     file_put_contents("./data.json", json_encode($todoListData));
 
 } else if (isset($_POST['deleteTask'])) {
