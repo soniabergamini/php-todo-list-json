@@ -5,7 +5,9 @@ createApp({
         return {
             API: 'api.php',
             todoList: [],
-            newTask: ""
+            newTask: "",
+            editText: "",
+            currentEditTask: undefined
         }
     },
     methods: {
@@ -22,14 +24,27 @@ createApp({
                 this.newTask = "";
             });
         },
+        // Call a function to call API and Add New Task
         addTask() {
             this.postApiData({newTask: this.newTask})
         },
+        // Call a function to call API and Remove a Single Task
         removeTask(i) {
             this.postApiData({ deleteTask: i })
         },
+        // Call a function to call API and Change Single Task Status
         changeTaskStatus(i) {
             this.postApiData({ changeStatusTask: i })
+        },
+        // Call a function to call API and Change Single Task Text
+        editTask(i) {
+            const data = {
+                taskIndex: i,
+                changeTaskText: this.editText
+            };
+            this.postApiData(data),
+            this.currentEditTask = undefined,
+            this.editText = ""
         }
     },
     mounted() {

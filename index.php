@@ -35,13 +35,22 @@
 
             <!-- To Do List from API -->
             <ul v-if="todoList.length>0" class="list-disc list-inset px-4 my-2">
-                <li v-for="(todo,i) in todoList" class="my-3 flex justify-between border-b-2 border-gray-800 rounded py-2">
+                <li v-for="(todo,i) in todoList" class="my-3 flex justify-between border-b-2 border-gray-800 rounded py-2 relative">
 
                     <!-- Task Name -->
-                    <span @click="changeTaskStatus(i)" :class="todo.done ? 'line-through' : null">{{ todo.text }}</span>
+                    <span :class="currentEditTask == i ? 'invisible' : null" @click="changeTaskStatus(i)" :class="todo.done ? 'line-through' : null">{{ todo.text }}</span>
+
+                    <!-- Edit Task Input -->
+                    <div v-show="currentEditTask == i" class="absolute">
+                        <input @keyup.enter="editTask(i)" type="text" v-model="editText" class="bg-transparent text-sky-700 px-2 border mr-2">
+                        <button @click="editTask(i)" class="bg-emerald-500 px-2 rounded hover:bg-teal-300 hover:text-zinc-700">EDIT</button>
+                    </div>
 
                     <!-- Task Status and Buttons -->
-                    <div class="flex gap-1 items-center">
+                    <div class="flex gap-2 items-center">
+
+                        <!-- Edit Task Button -->
+                        <button v-show="currentEditTask != i" @click="editText = todo.text, currentEditTask = i"><i class="fa-solid fa-pencil"></i></button>
 
                         <!-- Task Status -->
                         <small>DONE:</small>

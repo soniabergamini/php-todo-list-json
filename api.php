@@ -51,6 +51,15 @@ if (isset($_POST['newTask'])) {
     $taskIndex = $_POST['changeStatusTask'];
     $todoListData[$taskIndex]["done"] = !$todoListData[$taskIndex]["done"];
     file_put_contents("./data.json", json_encode($todoListData));
+
+} else if (isset($_POST['changeTaskText'])) {
+
+    // Change Task Text to PHP and JSON Array
+    $taskIndex = $_POST['taskIndex'];
+    $taskText = $_POST['changeTaskText'];
+    $todoListData[$taskIndex]["text"] = $taskText;
+    file_put_contents("./data.json", json_encode($todoListData));
+    
 }
 $todoList = json_encode($todoListData);
 
