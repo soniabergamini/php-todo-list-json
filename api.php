@@ -33,8 +33,23 @@ $todoList = file_get_contents("./data.json");
 // Data Processing
 $todoListData = json_decode($todoList, true);
 if (isset($_POST['newTask'])) {
+
     // Add New Task to PHP Array and JSON Array
     $todoListData[] = $_POST['newTask'];
+    file_put_contents("./data.json", json_encode($todoListData));
+
+} else if (isset($_POST['deleteTask'])) {
+
+    // Remove Task to PHP and JSON Array
+    $taskIndex = $_POST['deleteTask'];
+    array_splice($todoListData, $taskIndex, 1);
+    file_put_contents("./data.json", json_encode($todoListData));
+
+} else if (isset($_POST['changeStatusTask'])) {
+
+    // Change Task Status to PHP and JSON Array
+    $taskIndex = $_POST['changeStatusTask'];
+    $todoListData[$taskIndex]["done"] = !$todoListData[$taskIndex]["done"];
     file_put_contents("./data.json", json_encode($todoListData));
 }
 $todoList = json_encode($todoListData);
