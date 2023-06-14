@@ -1,1 +1,12 @@
-[{"text":"Go to the market","done":true},{"text":"Have launch with Jack","done":false},{"text":"Send emails","done":false},{"text":"Call the doctor","done":false},{"text":"Learn PHP","done":true},{"text":"Take a walk with Dea \ud83e\uddae","done":false},{"text":"Sleep all day all night","done":true},{"text":"Go to the vet","done":true},{"text":"Make lasagna with grandma","done":true},{"text":"Organize Betta's party","done":true}]
+[
+    { "text": "Go to the market",             "done": true  },
+    { "text": "Have launch with Jack",        "done": false },
+    { "text": "Send emails",                  "done": false },
+    { "text": "Call the doctor",              "done": false },
+    { "text": "Learn PHP",                    "done": true  },
+    { "text": "Take a walk with Dea 🦮",      "done": false },
+    { "text": "Sleep all day all night",      "done": true  },
+    { "text": "Go to the vet",                "done": false },
+    { "text": "Make lasagna with grandma",    "done": false },
+    { "text": "Organize Betta's party",       "done": true  }
+]

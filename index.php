@@ -38,7 +38,7 @@
                 <li v-for="(todo,i) in todoList" class="my-3 flex justify-between border-b-2 border-gray-800 rounded py-2">
 
                     <!-- Task Name -->
-                    <span @click="changeTaskStatus(i)" :class="!todo.done ? 'line-through' : null">{{ todo.text }}</span>
+                    <span @click="changeTaskStatus(i)" :class="todo.done ? 'line-through' : null">{{ todo.text }}</span>
 
                     <!-- Task Status and Buttons -->
                     <div class="flex gap-1 items-center">
